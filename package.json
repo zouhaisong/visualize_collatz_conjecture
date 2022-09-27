@@ -1,0 +1,28 @@
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "t": "python -m pytest -v --html=.pytest_report/pytest_report_`date +%Y%m%d%H%M%S`.html --self-contained-html src/p01_gen_numbers/test_collatz.py::test_collatz_dict_4",
+    "test": "python -m pytest -v --html=.pytest_report/pytest_report_`date +%Y%m%d%H%M%S`.html --self-contained-html src/p01_gen_numbers/test_collatz.py -k test_collatz_dict",
+    "testdir": "python -m pytest -v --html=.pytest_report/pytest_report_`date +%Y%m%d%H%M%S`.html --self-contained-html src/p01_gen_numbers/",
+    "testall": "python -m pytest -v --html=.pytest_report/pytest_report_`date +%Y%m%d%H%M%S`.html --self-contained-html src/",
+    "watch": "npm-watch"
+  },
+  "watch": {
+    "testdir": {
+      "patterns": ["src/p01_gen_numbers/*.py"],
+      "extensions": "py",
+      "delay": 2500,
+      "runOnChangeOnly": false,
+      "quiet": false,
+      "verbose": true
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "npm-watch": "^0.11.0"
+  }
+}
